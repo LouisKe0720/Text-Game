@@ -7,7 +7,7 @@ import sys
 def type_text(text, delay):
     for char in text:
         print(char, end = "", flush = True) #Print the character without moving to the next line    
-        time.sleep(delay) #Parameter is the delay for characters popping up 
+        time.sleep(delay*0) #Parameter is the delay for characters popping up 
     print()  # Move to the next line after the text is printed
 
 #Introduction to the Adventure Story Game
@@ -46,6 +46,40 @@ def play_again():
             elif choice == "2":
                 type_text("Thank you for playing the Fantasy Life!\n", 0.07)
                 sys.exit()
+
+#Secret Ending
+def custom_play_again():
+    type_text("Do you want to play again? (For the King ending, you must run the program again) ", 0.05)
+    choice = input("Yes (1)/ No (2): ")
+    #Restart the game
+    if choice == "1":
+        type_text("\n" + "Restarting the game ...\n" + "\n", 0.07)
+        start_adventure()
+    #Exit the game (the system will exit)
+    elif choice == "2":
+        type_text("Thank you for playing the Fantasy Life!\n", 0.07)
+        sys.exit()
+    elif choice in ["Darkness", "darkness"]:
+        type_text("\n" + "You have unlocked the secret ending!\n", 0.07)
+        type_text("\n" + "\n" + ". . .\n" + "\n", 0.04)
+        darkness_ending()
+    else:
+        #If the input is invalid, ask for the input again
+        while choice != "1" and choice != "2":
+            type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
+            type_text("Do you want to play again? (For the King ending, you must run the program again) ", 0.05)
+            choice = input("Yes (1)/ No (2): ")
+            if choice == "1":
+                type_text("\n" + "Restarting the game ...\n" + "\n", 0.07)
+                start_adventure()
+                break
+            elif choice == "2":
+                type_text("Thank you for playing the Fantasy Life!\n", 0.07)
+                sys.exit()
+            elif choice in ["Darkness", "darkness"]:
+                type_text("\n" + "You have unlocked the secret ending!\n", 0.07)
+                type_text("\n" + "\n" + ". . .\n" + "\n", 0.04)
+                darkness_ending()
 
 #Start the adventure (Normal game)
 def start_adventure():
@@ -681,7 +715,7 @@ def die_escaping_fairyland():
 #Win
 def win():
     type_text("\n" + "You saw John and all of the villagers.\n" + name_dialogue + "How?\n" + "John: We fought the Dark Lord and somehow survived!\n" + "John: But, you, my friend ...\n" + "John: The runner ...\n" + "John: WILL BE REMEMBERED AS A HERO.\n" + "The villagers applauded for your heroic deed.\n" + "You and the villagers had a feast that day.\n" + "You were happy to be back.\n" + "You were happy to be alive.\n" + "You brought peace back to Everpeace.\n" + "Everpeace remained peaceful for the years to come.\n" + "But, will it be peaceful forever?\n" + "Only time will tell.\n" + "The End.\n", 0.04)
-    play_again()
+    custom_play_again()
 
 #Die from the Dark Lord
 def die_dark_lord():
@@ -736,9 +770,11 @@ def next_day4():
             dodge_word = random.choice(dodge_words)
             print(dodge_word)
             guess = input("Enter the word to dodge the attack: ")
+            #If the word is correct, dodge the attack
             if guess == dodge_word:
                 type_text("You successfully dodged the attack.\n", 0.04)
             else:
+                #If the word is wrong, lose health
                 type_text("You couldn't dodge the attack", 0.05)
                 player_health -= 10
 
@@ -758,6 +794,10 @@ def king_name():
     type_text("\n" + "..." + "\n" + "You are the King.\n" + "...\n" + "You are 10 years old...\n" + "You have no friends...\n" + "You are alone in this world.\n" + "You don't even have parents.\n" + "Even if you do, you don't know them.\n" + "...\n" + "You are sitting next to a store in the city of Karelore.\n" + "Random Guy: Move it you thing!\n" + "You were homeless.\n" + "You sat next to the store as a beggar.\n" + "Random Guy: If you don't move, I kill you.\n" + "You didn't move.\n" + "...\n" + "Boom.\n" + "The guy kicked you so hard that you fell to the floor.\n" + "Random Guy: I told you, didn't I?\n" + "Random Guy: Hahahahahaha.\n" + "The guy grabbed you and tossed into near the trash.\n" + "Your vision started to become worse.\n" + "Suddenly, the world went blank.\n" + "...\n" + "Voice: Don't you feel like you don't belong in this world?\n" + "...\n" + "Voice: Don't you feel like your powerless?\n" + "...\n" + "Voice: Don't you ask yourself why life is so unfair?\n" + "...\n" + "Voice: If you join me, I will give you everything that you ever wanted.\n" + "Voice: All you need to do is to join me.\n" + "Voice: You can get revenge on the ones who hurt you.\n" + "Voice: Join me and you will feel invincible.\n" + "Voice: So, what do you say.\n" + "Matthew: Giv... e ... me ... th... at. po. wer...\n" + "Voice: Good choice, my friend.\n" + "You started to feel a surge of power around you.\n" + "Your vision was becoming better.\n" + "Your pain was disappearing.\n" + "You feel strong.\n" + "Voice: I will teach you the power of this element.\n" + "You were back at the place where you were kicked.\n" + "You quickly found the person who hurt you.\n" + "Voice: Use your power and KILL HIM.\n" + "You unleashed a power that no human can comprehend.\n" + "The world turned into darkness...\n", 0.04)
     type_text("Thank you for playing the secret ending of the King.\n" + "If you want to play the main game, run this program again and write your name that is neither 'king' or 'King'.\n", 0.04)
     sys.exit()
+
+def darkness_ending():
+    type_text("\n" + "One day, in the village of Everpeace...\n" + "You went to the place where you fought the Dark Lord.\n" + name_dialogue + "This brings back memories...\n" + name_dialogue + "Here is where I fought the almighty Dark Lord.\n" + "Kids: Woahhhh\n" + "One kid: This just looks like a forest.\n" + name_dialogue + "When I defeated the Dark Lord, the palace and everything disappeared.\n" + "The kids were fascinated by your stories.\n" + "Soon, it was dark.\n" + "The kids went back to their homes.\n" + "You wanted to stay there a little longer.\n" + "Suddenly, you heard a sound near the bushes.\n" + name_dialogue + "Who's there?\n" + "Voice: Hahahahaha\n" + "Voice: Your story might have sounded better if you have killed me.\n" + "You see a dark figure coming out of the bushes.\n" + "There was no face.\n" + "It was just a shadow-like corpse walking towards you.\n" + name_dialogue + "Who are you?\n" + "Voice: You might have killed that weakling who goes by the name, Dark Lord.\n" + "Voice: But, I am his power.\n" + "Voice: I will destory everything in this world.\n" + name_dialogue + "Not unless I stop you first.\n" + "You blasted elements that you learned from years ago.\n" + "Shadow Figure: Hahahaha.\n" + "Shadow Figure: You think that is going to work?\n" + "Shadow Figure: Take this.\n" + "The shadow figure blinded you and binded you to the ground.\n" + "Shadow Figure: Hahahaha.\n" + "Slowly you felt your limbs getting cut off.\n" + "You screamed in pain.\n" + "Soon, you only had a head and your heart.\n" + "Shadow Figure: Say goodbye!\n" + "The shadow figure cut off your head...\n" + "\n" + "\n" + "..." + "\n" + "\n" + "You woke up sweating...\n" + "You started to wonder if your dead.\n" + "You looked around and saw that your still in your house.\n" + "So, it was a dream you thought to yourself.\n" + "You went back to sleep.\n" + "\n" + "\n" + "Was it a dream?\n" + "Its for you to decide.\n", 0.04)
+    play_again()
 
 #If name is king
 if name in ["King", "king"]:
