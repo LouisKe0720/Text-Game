@@ -7,7 +7,7 @@ import sys
 def type_text(text, delay):
     for char in text:
         print(char, end = "", flush = True) #Print the character without moving to the next line    
-        time.sleep(delay*0) #Parameter is the delay for characters popping up 
+        time.sleep(delay) #Parameter is the delay for characters popping up 
     print()  # Move to the next line after the text is printed
 
 #Introduction to the Adventure Story Game
@@ -694,7 +694,7 @@ def next_day4():
     #Fight
     player_health = 100
     dark_lord_health = 120
-    
+
     #While the player and the Dark Lord are alive
     while player_health > 0 and dark_lord_health > 0:
         print("Player Health: " + str(player_health))
