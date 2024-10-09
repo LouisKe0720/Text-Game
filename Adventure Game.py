@@ -59,6 +59,7 @@ def start_adventure():
     elif choice == "2":
         run_path_1()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" and choice != "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             type_text("What do you want to do?: ", 0.05)
@@ -73,11 +74,13 @@ def fight_path_1():
     type_text("\n" + "You grab your sword and looked at John\n" + name_dialogue + "Let's go!\n" + "You and John see the Dark Lord's minions destroying the village.\n" + "John: We need to fight them off!\n" + "You and John fight the minions bravely.\n" + "You see the Dark Lord in the distance, watching the battle.\n" + "John: We need to defeat the Dark Lord!\n" + "Dark Lord's Commander: Not so fast. You will have to go through me first.\n" + "You and John charge towards the Dark Lord's Commander.\n" + "Dark Lord's Commander: You dare challenge me?\n" + "You and John fight the Dark Lord's Commander.\n" + "After a long battle, you and John gets defeated by the Commander.\n" + "The Dark Lord's Commander: You are no match for me!\n" + "You and John are against the wall, unable to move. The blade of the Commander's sword is pointed at your nose.\n" + "The Dark Lord's Commander: You have talent in swordfighting. I might spare your life if you serve our King.\n" + "John: Don't listen to him!\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Serve the Dark Lord's King? (1)/ Fight the Commander? (2): ")
+    #Choose to serve the King or fight the Commander
     if choice == "1":
         serve_king()
     elif choice == "2":
         fight_commander()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" and choice != "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             type_text("What do you want to do? ", 0.05)
@@ -92,11 +95,13 @@ def run_path_1():
     type_text("\n" + name_dialogue + " I can't do this!\n" + "You run away from the village and never look back.\n" + "You hear John's voice yelling your name, but you never return.\n" + "There are 2 ways where you can escape safely. The Ocean and the Forest.\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Escape to the Ocean? (1)/ Escape to the Forest? (2): ")  
+    #Choose to escape to the Ocean or the Forest
     if choice == "1":
         escape_ocean()
     elif choice == "2":
         escape_forest()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" and choice != "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             type_text("What do you want to do? ", 0.05)
@@ -111,11 +116,13 @@ def serve_king():
     type_text("\n" + name_dialogue + "I'm sorry, John but I want to live.\n" + "John: " + name + ", please don't do this.\n" + name_dialogue + "It's not personal.\n" + "Dark Lord's Commander: Good choice newcomer, but I hate to say this ... you're first task is to kill your friend.\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Kill John? (1)/ Refuse? (2): ")
+    #Choose to kill or refuse the order
     if choice == "1":
         kill_john()
     elif choice == "2":
         refuse_order()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" and choice != "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             type_text("What do you want to do? ", 0.05)
@@ -160,11 +167,13 @@ def escape_forest():
     type_text("\n" + name_dialogue + "I will escape to the Forest!\n" + "You run towards the Forest and never turned back.\n" + "You ran and ran until the village was miles away.\n" + "It started to become dark so you decided to take a break.\n" + "You happened to have a metal key in your pocket.\n" + "You looked around and found some flint.\n" + "You wondered if you should start a fire.\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Start a fire? (1)/ Sleep? (2): ")
+    #Choose to start a fire or sleep
     if choice == "1":
         start_fire()
     elif choice == "2":
         sleep_forest()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" or "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             type_text("What do you want to do? ", 0.05)
@@ -182,11 +191,13 @@ def kill_john():
     type_text("...\n"+ "Dark Lord: ... How many have you killed?\n" + "Andrew: 50, my lord\n" + "Dark Lord: ... And\n" + "Andrew: " + name + " has killed 100, my lord\n" + "Dark Lord: ... Impressive\n" + "Dark Lord: You have done well, " + name + ".\n" + "You feel regrets and happiness at the same time.\n" + "You started to think whether you should continue to serve the king.\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Continue serving the Dark Lord? (1)/ Refuse? (2): ")
+    #Choose to continue serving the King or refuse the order
     if choice == "1":
         continue_serving()
     elif choice == "2":
         refuse_order2()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" and choice != "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             type_text("What do you want to do? ", 0.05)
@@ -219,6 +230,7 @@ def drown_die():
 #Start a fire
 def start_fire():
     type_text("\n" + "You decided to start a fire.\n" + "You just have to know how to start one.\n" + "You used the flint to start a fire.\n", 0.04)
+    #Randomly choose if the fire is successful or not
     number = random.choice("12")
     if number == "1":
         type_text("You successfully started a fire.\n", 0.04)
@@ -246,6 +258,7 @@ def refuse_order2():
 
 #Forest Fire
 def forest_fire():
+    #Random chance to die from fire
     burn = random.choice("12")
     if burn == "1":
         type_text("\n" + "Remember the fire you made?\n" + "Well, you won't see it anymore.\n" + "Why? You died from the fire.\n" + "The fire spread when you were sleeping, causing a forest fire.\n" + "And unfortunately, you got caught in it.\n", 0.04)
@@ -254,11 +267,13 @@ def forest_fire():
         type_text("\n" + "You wake up to the smell of smoke.\n" + "The forest was burning.\n" + name_dialogue + "How did this happen?\n" + "You ran as fast as you could.\n" + "You ran and ran until the fire was no where to be seen.\n" + "You see a small hut nearby.\n" + "You are also very hungry.\n", 0.04)
         type_text("What do you want to do? ", 0.05)
         choice = input("Go to the hut? (1) / Keep walking? (2): ")
+        #Choose to go to the hut or keep walking
         if choice == "1":
             hut()
         elif choice == "2":
             keep_walking()
         else:
+            #If the input is invalid, ask for the input again
             while choice != "1" and choice != "2":
                 type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
                 choice = input("Go to the hut? (1) / Keep walking? (2): ")
@@ -272,11 +287,13 @@ def sleep_coldness():
     type_text("\n" + "You slept in the coldness.\n" + "You shivered and shivered until you couldn't take it anymore.\n" + "You started to walk again.\n" + "You walked and walked until you couldn't walk anymore.\n" + "You found a small hut.\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Go to the hut? (1) / Keep walking? (2): ")
+    #Choose to go to the hut or keep walking
     if choice == "1":
         hut()
     elif choice == "2":
         keep_walking()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" and choice != "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             choice = input("Go to the hut? (1) / Keep walking? (2): ")
@@ -328,11 +345,13 @@ def believe_him():
     type_text("\n" + name_dialogue + "Tell me more.\n" + "The old man turns around and you see his eyes glowing.\n" + "Old Man: You are born with the blood of the elements.\n" + "Your parents were one of the most famous element wielders.\n" + name_dialogue + "No, I was told that I never had any parents.\n" + "Old Man: You were lied to.\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Believe him? (1) / Run away? (2): ")
+    #Choose to believe or run away
     if choice == "1":
         believe_him2()
     elif choice == "2":
         run_away()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" and choice != "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             choice = input("Believe him? (1) / Run away? (2): ")
@@ -372,13 +391,16 @@ def waterfall():
     #Answer the questions
     #Question 1
     type_text("Fairy Queen: Are you a demon? ", 0.05)
+    #Randomly choose a letter
     letter = random.choice("abcdefghijklmnopqrstuvwxyz")
     print(letter)
     guess = input("Enter the letter to keep living: ")
+    #If the letter is correct
     if guess == letter:
         type_text("The water hurted you but you were able to answer the question.\n", 0.04)
         type_text(name_dialogue + "I'm not a demon.\n" + name_dialogue + "Demons are not even real.\n", 0.04)
     else: 
+        #If the letter is wrong
         type_text("The water hurted you and you were unable to answer the question.\n", 0.04)
         type_text("You have fainted from the pain.\n", 0.04)
         die_waterfall()
@@ -388,10 +410,12 @@ def waterfall():
     letter = random.choice("abcdefghijklmnopqrstuvwxyz")
     print(letter)
     guess = input("Enter the letter to keep living: ")
+    #If the letter is correct
     if guess == letter:
         type_text("The water hurted you but you were able to answer the question.\n", 0.04)
         type_text(name_dialogue + "Yes ... they destroy my hometown\n" + name_dialogue + "I ran away to survive.\n", 0.04)
     else:
+        #If the letter is wrong
         type_text("The water hurted you and you were unable to answer the question.\n", 0.04)
         type_text("You have fainted from the pain.\n", 0.04)
         die_waterfall()
@@ -401,10 +425,12 @@ def waterfall():
     letter = random.choice("abcdefghijklmnopqrstuvwxyz")
     print(letter)
     guess = input("Enter the letter to keep living: ")
+    #If the letter is correct
     if guess == letter:
         type_text("The water hurted you but you were able to answer the question.\n", 0.04)
         type_text(name_dialogue + "I don't know.\n" + name_dialogue + "I just kept walking and saw something with wings.\n", 0.04)
     else:
+        #If the letter is wrong
         type_text("The water hurted you and you were unable to answer the question.\n", 0.04)
         type_text("You have fainted from the pain.\n", 0.04)
         die_waterfall()
@@ -418,10 +444,12 @@ def next_day():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to release the fireball: ")
+    #If the word is correct, release the fireball
     if guess == word:
         type_text("You successfully released the fireball.\n", 0.04)
         elements()
     else:
+        #If the word is wrong, try again
         while guess != word:
             type_text("You couldn't release it", 0.05)
             type_text("\n" + "Old Man: It's okay. Try again.\n", 0.04)
@@ -455,10 +483,12 @@ def next_day2():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to release the light beam: ")
+    #If the word is correct, release the light beam
     if guess == word:
         type_text("You successfully released the light beam.\n", 0.04)
         elements2()
     else:
+        #If the word is wrong, try again
         while guess != word:
             type_text("You couldn't release it", 0.05)
             type_text("\n" + "Fairy Queen: It's okay. Try again.\n", 0.04)
@@ -480,11 +510,13 @@ def elements2():
     type_text("\n" + "Fairy Queen: You have successfully learned how to release the element of Light.\n" + "Fairy Queen: You have learned how to control it now.\n" + "Fairy Queen: You need to use it to help others.\n" + "Fairy Queen: Come here.\n" + "You came up to the Fairy Queen.\n" + "The Fairy Queen flew up on top of your head.\n" + "You felt a wierd sensation.\n" + "You felt like you were glowing.\n" + "You felt like you were floating.\n" + "Fairy Queen: Your pain from the water should be gone now.\n" + "Fairy Queen: This will be another of your lesson.\n" + "Fairy Queen: You will learn how to heal others.\n" + "The Fairy Queen flew back down to face you.\n" + "Fairy Queen: Olivia, bring me a thorn.\n" + "Olivia: Yes, my queen.\n" + "After some time, Olivia came back with a thorn.\n" + "Fairy Queen: " + name + ", cut yourself with it.\n" + name_dialogue + "What?\n" + "Fairy Queen: Trust me.\n" + "You cut yourself with the thorn.\n" + "You felt pain.\n" + "You felt a wierd tingle in your veins.\n" + "Fairy Queen: There is some little poison in it.\n" + "Fairy Queen: You must learn the power to heal on you own.\n" + "Fairy Queen: You have 3 days before the poison kills you.\n" + "Fairy Queen: Let's go fairies.\n" + "The fairies left the room.\n" + "You were left alone in the room.\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Learn to heal yourself? (1) / Try to escape (2): ")
+    #Choose to heal or escape
     if choice == "1":
         heal_poison()
     elif choice == "2":
         escape_fairyland()
     else:
+        #If the input is invalid, ask for the input again
         while choice != "1" and choice != "2":
             type_text("Invalid choice. Please choose '1' or '2'.\n", 0.07)
             choice = input("Heal yourself? (1) / Wait for the poison to kill you? (2): ")            
@@ -500,10 +532,12 @@ def dark_lord():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to fight back: ")
+    #If the word is correct
     if guess == word:
         type_text("You successfully released a spike from the ground.\n", 0.04)
         type_text("Dark Lord's minions: Oww, that hurt.\n", 0.04)
     else:
+        #If the word is wrong
         while guess != word:
             type_text("You couldn't release your elements", 0.05)
             type_text("\n" + "Dark Lord's minion: You moron, you thought your good?\n", 0.04)
@@ -512,10 +546,12 @@ def dark_lord():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to fight back: ")
+    #If the word is correct
     if guess == word:
         type_text("You successfully released a strong wind that blew the minions back.\n" + "The minion hit the trees behind with incredible forece.", 0.04)
         type_text("\n" + "Dark Lord's minions: Oww, please stop.\n", 0.04)
     else:
+        #If the word is wrong
         while guess != word:
             type_text("You couldn't release your elements", 0.05)
             type_text("\n" + "Dark Lord's minion: You got us once, but never the second time.\n", 0.04)
@@ -524,10 +560,12 @@ def dark_lord():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to fight back: ")
+    #If the word is correct
     if guess == word:
         type_text("You successfully released a flow of water trapped the minions in place.\n", 0.04)
         type_text("\n" + "Dark Lord's minions: Gulp, gulp, gulp, please st... Gulp.\n", 0.04)
     else:
+        #If the word is wrong
         while guess != word:
             type_text("You couldn't release your elements", 0.05)
             type_text("\n" + "Dark Lord's minion: Sucks to be you.\n", 0.04)
@@ -544,10 +582,12 @@ def heal_poison():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to heal yourself: ")
+    #If the word is correct, heal yourself
     if guess == word:
         type_text("You have successfully learned to heal yourself\n" + "You felt the wound closing up.\n" + "You felt the pain leaving your body.\n" + "You felt the joy of healing yourself.\n", 0.04)
         healed_yourself()
     else:
+        #If the word is wrong, try again
         while guess != word:
             type_text("You couldn't heal yourself\n" + "You remember that things take time.\n" + "You tried again.\n", 0.05)
             word = random.choice(words)
@@ -574,10 +614,12 @@ def dark_lord_battle():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to dodge the attack: ")
+    #If the word is correct, dodge the attack
     if guess == word:
         type_text("You successfully dodged the attack.\n", 0.04)
         type_text("Dark Lord: You got skills.\n" + "Dark Lord: Let's see if you can dodge this.\n" + "The Dark Lord turn the sky into pitch black.\n" + "He shot hundreds of dark arrows at you.\n", 0.04)
     else:
+        #If the word is wrong, die from the attack
         while guess != word:
             type_text("You couldn't dodge the attack", 0.05)
             type_text("\n" + "Dark Lord: Weakling.\n" + "Dark Lord: Hahahahahaha\n", 0.04)
@@ -586,10 +628,12 @@ def dark_lord_battle():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to block the attack: ")
+    #If the word is correct, block the attack
     if guess == word:
         type_text("You successfully released the power of Wind to block the arrows.\n", 0.04)
         type_text("\n" + "Dark Lord: You are good.\n" + "Dark Lord: But, how strong are you.\n" + "Dark Lord: Hit me with all you've got.\n" + "Dark Lord: Hahahaha.\n", 0.04)
     else:
+        #If the word is wrong, die
         while guess != word:
             type_text("You couldn't block the attack", 0.05)
             type_text("\n" + "Dark Lord: Weakling.\n" + "Dark Lord: Hahahahahaha\n", 0.04)
@@ -598,10 +642,12 @@ def dark_lord_battle():
     word = random.choice(words)
     print(word)
     guess = input("Enter the word to attack the Dark Lord: ")
+    #If the word is correct, attack the Dark Lord
     if guess == word:
         type_text("\n" + "You successfully released a beam of all the 4 elements at the Dark Lord.\n", 0.04)
         type_text("Dark Lord: Ahhhh, now you have done it.\n" + "Dark Lord: You have made me mad.\n" + "Dark Lord: You will pay for this.\n" + "The Dark Lord shot a beam of darkness at you so fast that it hit you.\n", 0.04)
     else:
+        #If the word is wrong, die
         while guess != word:
             type_text("You couldn't release the attack", 0.05)
             type_text("\n" + "Dark Lord: Weakling.\n" + "The Dark Lord shot a super fast dark beam at you.\n" + "You couldn't dodge it.\n", 0.04)
@@ -609,10 +655,12 @@ def dark_lord_battle():
             return
     type_text("You felt a burn on your shoulders.\n" + "You felt like you were about to die.\n" + "However, you remember the promise you made to the old man.\n" + "The terror that happened to your village.\n" + name_dialogue + "I will not let you live another day.\n", 0.04)
     power = input("Enter as much letters as you can to release the power of the elements (You want to type a lot): ")
+    #If the input is more than 100 characters, win
     if len(power) > 100:  
         type_text("You successfully released the power of the elements.\n" + "You hit the Dark Lord with incredible power.\n" + "Dark Lord: AHHHHHHHHHhhhh...\n" + "The Dark Lord fell to the ground.\n" + "Dark Lord: I never knew it would come to this...\n" + "Dark Lord: Kid, who are you.\n" + name_dialogue + " " + name + ".\n" + "Dark Lord: You were a worthy opponent.\n" + "Dark Lord: You better use that power not like how I used mine.\n" + "Dark Lord: Use it for the good of people.\n" + "The Dark Lord's body started to fade away.\n" + "Even the palace and the minions around started to disappear.\n" + "You wondered what happened.\n" + "You wondered if you did the right thing.\n" + "You wondered if you could ever go back to your village.\n" + "Suddenly, you felt a hand on your shoulder.\n" + "You turned around and saw William Solace.\n" + "\n" + "William Solace: Good job, " + name + ".\n" + "William Solace: You have brought peace to our lands.\n" + "William Solace: Let's go back to the village.\n" + "You were teleported back to the village.\n", 0.04)
         win()
     else:
+        #If the input is less than 100 characters, die
         while len(power) < 100:
             type_text("You didn't release enough power", 0.05)
             type_text("\n" + "Dark Lord: Weakling.\n" + "The Dark Lord shot a super fast dark beam at you.\n" + "You couldn't dodge it.\n", 0.04)
@@ -646,6 +694,8 @@ def next_day4():
     #Fight
     player_health = 100
     dark_lord_health = 120
+    
+    #While the player and the Dark Lord are alive
     while player_health > 0 and dark_lord_health > 0:
         print("Player Health: " + str(player_health))
         print("Dark Lord Health: " + str(dark_lord_health))
