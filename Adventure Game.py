@@ -7,7 +7,7 @@ import sys
 def type_text(text, delay):
     for char in text:
         print(char, end = "", flush = True) #Print the character without moving to the next line    
-        time.sleep(delay*0) #Parameter is the delay for characters popping up 
+        time.sleep(delay) #Parameter is the delay for characters popping up 
     print()  # Move to the next line after the text is printed
 
 #Introduction to the Adventure Story Game
@@ -20,6 +20,8 @@ while name == "":
     name = input("Enter your name: ")
 #Dialogue for the name
 name_dialogue = name + ": "
+type_text("\n" + "When you see the text 'What do you want to do?', you will be given a choice to choose from.\n" + "You will be given a number to choose from.\n" + "Please type the number to choose your path.\n" + "Please do not spam or click 'enter' multiple times as it will answer the next question.\n" + "Enjoy the game!\n", 0.07)
+type_text("\n" + "\n", 0.07)
 
 #Play again
 def play_again():
@@ -376,7 +378,7 @@ def die_burn():
 
 #Believe the old man
 def believe_him():
-    type_text("\n" + name_dialogue + "Tell me more.\n" + "The old man turns around and you see his eyes glowing.\n" + "Old Man: You are born with the blood of the elements.\n" + "Your parents were one of the most famous element wielders.\n" + name_dialogue + "No, I was told that I never had any parents.\n" + "Old Man: You were lied to.\n", 0.04)
+    type_text("\n" + name_dialogue + "Tell me more.\n" + "The old man turns around and you see his eyes glowing.\n" + "Old Man: You are born with the blood of the elements.\n" + "Old Man: Your parents were one of the most famous element wielders.\n" + name_dialogue + "No, I was told that I never had any parents.\n" + "Old Man: You were lied to.\n", 0.04)
     type_text("What do you want to do? ", 0.05)
     choice = input("Believe him? (1) / Run away? (2): ")
     #Choose to believe or run away
@@ -416,7 +418,7 @@ def fairy_land():
 
 #Secret Room
 def secret_room():
-    type_text("\n" + "Old Man: follow me.\n" + "You followed the old man to a secret room.\n" + "The room was filled with books and scrolls.\n" + "Old Man: This is where you will learn about your power.\n" + name_dialogue + "What power?\n" + "Old Man: The power of the elements.\n" + "Old Man: Hold this.\n" + "He hands you a scroll.\n" + "You held it and felt a surge of heat, calmness, and power.\n" + "Old Man: Do you feel it?\n" + name_dialogue + "What is this?\n" + "Old Man: This is the elements calling to you.\n" + "Old Man: You won't be able to control it at first.\n" + "Old Man: But, you will learn.\n" + name_dialogue + "I don't understand\n" + "Old Man: You will.\n" + "Old Man: Come back tomorrow and we will start your training.\n" + name_dialogue + "I don't have anywhere to stay\n" + "Old Man: You can stay here.\n" + "The old man showed you to a room.\n" + "It was filled with books and looked ancient.\n" + "Old Man: This will be your room for now on.\n" + name_dialogue + "Thank you.\n" + "The old man leaves and closes the the door behind him.\n" + "You are tired from all the walking and the events of the day.\n" + "You decided to sleep for the night.\n", 0.04)
+    type_text("\n" + "Old Man: Follow me.\n" + "You followed the old man to a secret room.\n" + "The room was filled with books and scrolls.\n" + "Old Man: This is where you will learn about your power.\n" + name_dialogue + "What power?\n" + "Old Man: The power of the elements.\n" + "Old Man: Hold this.\n" + "He hands you a scroll.\n" + "You held it and felt a surge of heat, calmness, and power.\n" + "Old Man: Do you feel it?\n" + name_dialogue + "What is this?\n" + "Old Man: This is the elements calling to you.\n" + "Old Man: You won't be able to control it at first.\n" + "Old Man: But, you will learn.\n" + name_dialogue + "I don't understand\n" + "Old Man: You will.\n" + "Old Man: Come back tomorrow and we will start your training.\n" + name_dialogue + "I don't have anywhere to stay\n" + "Old Man: You can stay here.\n" + "The old man showed you to a room.\n" + "It was filled with books and looked ancient.\n" + "Old Man: This will be your room for now on.\n" + name_dialogue + "Thank you.\n" + "The old man leaves and closes the the door behind him.\n" + "You are tired from all the walking and the events of the day.\n" + "You decided to sleep for the night.\n", 0.04)
     next_day()
 
 #Fairy Land 2
